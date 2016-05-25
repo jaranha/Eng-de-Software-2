@@ -1,4 +1,3 @@
-#include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <conio.h>
@@ -6,12 +5,12 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 float calcularQuadrado(){
-	int lado, area;
+	float lado, area;
 	
 	system("cls");
 
 	printf("Insira o valor do lado do quadrado: ");
-	scanf("%d", &lado);
+	scanf("%f", &lado);
 
 	area = (lado * lado);
 
@@ -23,12 +22,12 @@ return 0;
 }
 
 float calcularRetangulo(){
-	int base, altura, area2;
+	float base, altura, area2;
 	
 	system("cls");
 
 	printf("Insira o valor da base do retangulo: ");
-	scanf("%d", &base);
+	scanf("%f", &base);
 
 	printf("Insira o valor da altura do retangulo: ");
 	scanf("%f", &altura);
@@ -56,11 +55,13 @@ int main(int argc, char** argv) {
 	printf("\n");
 	printf("\n");
 	
-	printf("Selecione 1 para calcular quadrado e 2 para retangulo: ");
+	
+	do{
+
+	printf("\n\nSelecione 1 para calcular quadrado, 2 para retangulo e 3 para sair: ");
 	scanf("%d", &forma);
 	
 	switch(forma){
-		
 		case 1:
 			calcularQuadrado();
 			break;
@@ -68,7 +69,13 @@ int main(int argc, char** argv) {
 		case 2:
 			calcularRetangulo();
 			break;
+		case 3:
+			exit;
 	}
+	
+	
+
+}while(forma>0 || forma == "3");
 	
 	return 0;
 }
